@@ -306,3 +306,16 @@ window.addEventListener("load", setup);
  * maak een invoerveld en een knop in de html, en javascript code 
  * waarmee een woord kan worden toegevoegd aan de array WORDS
  */
+
+function setupNewWord() {
+    let button = document.getElementById('hangman-addword');
+    button.addEventListener('click', addNewWord);
+}
+
+function addNewWord() {
+    let input = document.getElementById('hangman-newword');
+    let word = input.value;
+    WORDS.push(word);
+}
+
+window.addEventListener("load", setupNewWord);
