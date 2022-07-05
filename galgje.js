@@ -150,7 +150,8 @@ class Hangman {
      * Zorg ervoor dat this.word een random woord krijgt uit WORDS
      */
     reset() {
-        this.word = WORDS[3];
+        let wordIndex = Math.floor(Math.random() * WORDS.length);
+        this.word = WORDS[wordIndex];
         
 
         this.word = this.word.toUpperCase()
