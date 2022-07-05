@@ -280,6 +280,11 @@ class Hangman {
      * Geef true terug als het aantal letters in this.guessedLetters overeenkomt met het aantal letters in this.word
      */
     isWinner() {
+        return this.guessedLetters.length == this.word.length;
+        // Ook goed is:
+        if(this.guessedLetters.length == this.word.length) {
+            return true;
+        }
     }
 }
 
