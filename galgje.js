@@ -268,6 +268,11 @@ class Hangman {
      * Geef true terug als het this.errors gelijk is aan 10
      */
     isGameOver() {
+        return this.errors == 10;
+        // Ook goed is:
+        if(this.errors == 10) {
+            return true;
+        }
     }
 
     /**
