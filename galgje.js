@@ -236,34 +236,30 @@ class Hangman {
     drawHangmanPart() {
         const errorShape = errorShapes[this.errors - 1];
 
-        switch (errorShape.type) {
-            case "triangle":
-                this.context.moveTo(errorShape.x1, errorShape.y1);
-                this.context.lineTo(errorShape.x2, errorShape.y2);
-                this.context.lineTo(errorShape.x3, errorShape.y3);
-                this.context.closePath();
-                break;
-
-            case "line":
-                this.context.moveTo(errorShape.x1, errorShape.y1);
-                this.context.lineTo(errorShape.x2, errorShape.y2);
-                break;
-
-            case "circle":
-                this.context.moveTo(errorShape.x1, errorShape.y1);
-                this.context.arc(
-                    errorShape.x2,
-                    errorShape.y2,
-                    errorShape.r,
-                    0,
-                    Math.PI * 2,
-                    true
-                );
-                break;
-
-            default:
-                break;
+        if(errorShape.type == 'triangle') {
+            this.context.moveTo(errorShape.x1, errorShape.y1);
+            this.context.lineTo(errorShape.x2, errorShape.y2);
+            this.context.lineTo(errorShape.x3, errorShape.y3);
+            this.context.closePath();
         }
+
+        if(errorShape.type == 'line') {
+            this.context.moveTo(errorShape.x1, errorShape.y1);
+            this.context.lineTo(errorShape.x2, errorShape.y2);
+        }
+
+        if(errorShape.type == 'circle') {
+            this.context.moveTo(errorShape.x1, errorShape.y1);
+            this.context.arc(
+                errorShape.x2,
+                errorShape.y2,
+                errorShape.r,
+                0,
+                Math.PI * 2,
+                true
+            );
+        }
+
         this.context.stroke();
     }
 
